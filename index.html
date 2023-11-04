@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-white">
+    <nav class="bg-gray-800 fixed w-full z-10">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <button
+              type="button"
+              class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <span class="absolute -inset-0.5"></span>
+
+              <svg
+                class="block h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+
+              <svg
+                class="hidden h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="flex flex-1 items-center justify-center sm:items-stretch">
+            <div class="hidden sm:ml-6 sm:block">
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="text-white rounded-md px-3 py-2 text-sm font-medium"
+                  >Acceuil</a
+                >
+                <a
+                  href="#presentation"
+                  class="text-white rounded-md px-3 py-2 text-sm font-medium"
+                  >Présentation</a
+                >
+                <a
+                  href="#"
+                  class="text-white rounded-md px-3 py-2 text-sm font-medium"
+                  >Projets</a
+                >
+                <a
+                  href="#"
+                  class="text-white rounded-md px-3 py-2 text-sm font-medium"
+                  >Contact</a
+                >
+                <!-- <button class="dark-mode-toggle" onclick="toggleDarkMode()">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      class="text-gray-400 dark:text-gray-200"
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm-3-8h6v2H9v-2z"
+                    />
+                  </svg>
+                </button> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sm:hidden" id="mobile-menu">
+        <div class="space-y-1 px-2 pb-3 pt-2">
+          <a
+            href="#"
+            class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Accueil</a
+          >
+          <a
+            href="#presentation"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Présentation</a
+          >
+          <a
+            href="#"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Projets</a
+          >
+          <a
+            href="#"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+    <section
+      class="relative inset-x-0 top-0 max-sm:hidden h-auto w-full flex flex-col text-white"
+      style="background-image: url('./cloud.png'); background-size: cover"
+    >
+      <div class="flex">
+        <div class="text-left pt-20 pl-52 flex-1">
+          <h4 class="italic text-2xl font-serif text-left pt-16">
+            Bonjour je m'appelle Fayssal Mechmeche
+            <br />
+            Bienvenue dans mon portfolio
+          </h4>
+
+          <button id="playPause" class="mt-10 rounded-lg text-2xl font-serif">
+            <img
+              id="playPauseIcon"
+              width="50"
+              height="50"
+              src="https://img.icons8.com/ios/50/play--v1.png"
+              alt="play--v1"
+            />
+          </button>
+          <audio id="audio" src="./music.mp4"></audio>
+          <div class="flex items-center mt-4">
+            <div class="w-48 h-4 bg-gray-700 rounded-full overflow-hidden">
+              <div id="progressBar" class="h-full bg-green-500"></div>
+            </div>
+            <span id="currentTime" class="text-sm ml-2">0:00</span>
+          </div>
+        </div>
+        <div class="flex-1 pt-10">
+          <img class="w-96 h-96" src="./computer.svg" alt="" />
+        </div>
+      </div>
+    </section>
+    <!-- buttons fixed-->
+    <div class="fixed bottom-0 right-0 p-8 max-sm:hidden">
+      <a
+        href="https://www.linkedin.com/in/fayssal-mechmeche-developpeur-web/"
+        target="_blank"
+      >
+        <img
+          class="py-2"
+          width="50"
+          height="50"
+          src="https://img.icons8.com/ios-filled/50/linkedin.png"
+          alt="linkedin"
+        />
+      </a>
+      <a href="https://github.com/fayssalmechmeche" target="_blank">
+        <img
+          class="py-2"
+          width="50"
+          height="50"
+          src="https://img.icons8.com/ios-filled/50/github.png"
+          alt="github"
+        />
+      </a>
+      <a href="#contact"
+        ><img
+          class="py-2"
+          width="50"
+          height="50"
+          src="https://img.icons8.com/ios-filled/50/new-post.png"
+          alt="new-post"
+      /></a>
+    </div>
+
+    <section id="presentation">
+      <div class="text-center items-center flex flex-col px-5">
+        <h1 class="text-black font-bold text-4xl py-20 max-md:pt-32">
+          À propos de moi
+        </h1>
+        <p class="text-black font-serif">
+          Actuellement en alternance en tant que développeur Full-stack, je
+          développe des sites de ventes en ligne pour des clients.
+          <br />
+          Je suis passionné par l'automatisation des tâches, j'aime créer des
+          outils qui permettent de gagner du temps.
+          <br />
+          Sur mon portfolio vous trouverez mes projets sur lesquels j'ai
+          travaillé pendant mon temps libre.
+        </p>
+      </div>
+      <div class="flex flex-row justify-center gap-20">
+        <a
+          href="https://www.linkedin.com/in/fayssal-mechmeche-developpeur-web/"
+          target="_blank"
+        >
+          <img
+            class="py-10"
+            width="50"
+            height="50"
+            src="https://img.icons8.com/ios-filled/50/linkedin.png"
+            alt="linkedin"
+          />
+        </a>
+
+        <a href="https://github.com/fayssalmechmeche" target="_blank"
+          ><img
+            class="py-10"
+            width="50"
+            height="50"
+            src="https://img.icons8.com/ios-filled/50/github.png"
+            alt="github"
+        /></a>
+      </div>
+    </section>
+    <hr class="xl:mx-52" />
+    <section id="educations">
+      <h1 class="text-center font-bold text-4xl py-10">Formations</h1>
+      <div class="">
+        <div class="flex flex-col text-center">
+          <div class="flex px-5 pb-2">
+            <h1 class="flex-1 text-lg">
+              <span class="border-b-2 border-black"
+                >Brevet de technicien supérieur SIO SLAM</span
+              >
+            </h1>
+            <p class="flex-1 text-lg">
+              Lycée Jean Perrin
+              <br />
+              <small class="text-gray-400">2019-2021</small>
+            </p>
+          </div>
+          <div class="flex px-5 py-4">
+            <h1 class="flex-1 text-lg">
+              <span class="border-b-2 border-black"
+                >Brevet de technicien supérieur SIO SLAM</span
+              >
+            </h1>
+            <p class="flex-1 text-lg">
+              Lycée Jean Perrin
+              <br />
+              <small class="text-gray-400">2019-2021</small>
+            </p>
+          </div>
+          <div class="flex px-5 py-4">
+            <h1 class="flex-1 text-lg">
+              <span class="border-b-2 border-black"
+                >Brevet de technicien supérieur SIO SLAM</span
+              >
+            </h1>
+            <p class="flex-1 text-lg">
+              Lycée Jean Perrin
+              <br />
+              <small class="text-gray-400">2019-2021</small>
+            </p>
+          </div>
+          <div class="flex px-5 py-4">
+            <h1 class="flex-1 text-lg">
+              <span class="border-b-2 border-black"
+                >Brevet de technicien supérieur SIO SLAM</span
+              >
+            </h1>
+            <p class="flex-1 text-lg">
+              Lycée Jean Perrin
+              <br />
+              <small class="text-gray-400">2019-2021</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr class="xl:mx-52 mt-10" />
+    <section id="works">
+      <h1 class="text-center font-bold text-4xl py-10">Expériences</h1>
+      <div class="">
+        <div class="flex flex-col text-center">
+          <div class="flex px-5 pb-2">
+            <h1 class="flex-1 text-lg">
+              <span class="border-b-2 border-black"
+                >Brevet de technicien supérieur SIO SLAM</span
+              >
+            </h1>
+            <p class="flex-1 text-lg">
+              Lycée Jean Perrin
+              <br />
+              <small class="text-gray-400">2019-2021</small>
+            </p>
+          </div>
+          <div class="flex px-5 py-4">
+            <h1 class="flex-1 text-lg">
+              <span class="border-b-2 border-black"
+                >Brevet de technicien supérieur SIO SLAM</span
+              >
+            </h1>
+            <p class="flex-1 text-lg">
+              Lycée Jean Perrin
+              <br />
+              <small class="text-gray-400">2019-2021</small>
+            </p>
+          </div>
+          <div class="flex px-5 py-4">
+            <h1 class="flex-1 text-lg">
+              <span class="border-b-2 border-black"
+                >Brevet de technicien supérieur SIO SLAM</span
+              >
+            </h1>
+            <p class="flex-1 text-lg">
+              Lycée Jean Perrin
+              <br />
+              <small class="text-gray-400">2019-2021</small>
+            </p>
+          </div>
+          <div class="flex px-5 py-4">
+            <h1 class="flex-1 text-lg">
+              <span class="border-b-2 border-black"
+                >Brevet de technicien supérieur SIO SLAM</span
+              >
+            </h1>
+            <p class="flex-1 text-lg">
+              Lycée Jean Perrin
+              <br />
+              <small class="text-gray-400">2019-2021</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="xl:mx-52 mt-10" />
+    <section id="projects">
+      <h1 class="text-center font-bold text-4xl py-10">Projets</h1>
+      <div class="card"></div>
+    </section>
+    <hr class="xl:mx-52" />
+    <section id="projects">
+      <h1 class="text-center font-bold text-4xl py-10">Contact</h1>
+      <div class="card"></div>
+    </section>
+    <script>
+      const audio = document.getElementById("audio");
+      const playPauseButton = document.getElementById("playPause");
+      const playPauseIcon = document.getElementById("playPauseIcon");
+      const progressBar = document.getElementById("progressBar");
+      const currentTimeDisplay = document.getElementById("currentTime");
+
+      let isPlaying = false;
+
+      playPauseButton.addEventListener("click", () => {
+        if (isPlaying) {
+          audio.pause();
+          playPauseIcon.src = "https://img.icons8.com/ios/50/play--v1.png";
+        } else {
+          audio.play();
+          playPauseIcon.src = "https://img.icons8.com/ios/50/pause--v1.png";
+        }
+        isPlaying = !isPlaying;
+      });
+
+      audio.addEventListener("timeupdate", () => {
+        const progress = (audio.currentTime / audio.duration) * 100;
+        progressBar.style.width = `${progress}%`;
+        const minutes = Math.floor(audio.currentTime / 60);
+        const seconds = Math.floor(audio.currentTime % 60);
+        currentTimeDisplay.textContent = `${minutes}:${
+          seconds < 10 ? "0" : ""
+        }${seconds}`;
+      });
+    </script>
+
+    <script>
+      const mobileMenuButton = document.querySelector(
+        '[aria-controls="mobile-menu"]'
+      );
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton.addEventListener("click", () => {
+        const expanded =
+          mobileMenuButton.getAttribute("aria-expanded") === "true" || false;
+        mobileMenuButton.setAttribute("aria-expanded", !expanded);
+        mobileMenu.hidden = expanded;
+      });
+    </script>
+    <script>
+      function toggleDarkMode() {
+        const body = document.documentElement;
+        body.classList.toggle("dark");
+      }
+    </script>
+  </body>
+</html>
